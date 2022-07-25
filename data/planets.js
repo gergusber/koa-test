@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Mercury",
     "code": "MER"
@@ -59,4 +59,4 @@
     "name": "Europa",
     "code": "JUP_EUR"
   }
-]
+];

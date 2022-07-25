@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "name": "Hintz Union Space Center",
     "uid": "da9c2dee-3b38-4d21-b911-083599c05dad",

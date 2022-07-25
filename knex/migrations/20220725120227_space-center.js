@@ -12,7 +12,6 @@
         table.float('longitude').notNullable();
         table.timestamps();
         table.integer('planets_id').references('planets.id');
-        // table.integer('planets_code').references('planets.code');
     })
 ]);
 /**

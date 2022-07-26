@@ -73,26 +73,25 @@ const typeDefs = gql`
     }
 
     type Query {
-        planets(limit: Int): [Planet!]!
-        spaceCenters(page: Int,pageSize: Int): [SpaceCenter!]!
-        spaceCenter(id: Int, uid: Int): SpaceCenter!
-        flights(from: String!,to: String!, seatCount: Int, departureDay: String,page: Int,pageSize: Int): [Flight!]!
+        planets(limit: Int): [Planet]
+        spaceCenters(page: Int,pageSize: Int): [SpaceCenter]
+        spaceCenter(id: Int, uid: Int): SpaceCenter
+        flights(from: String!,to: String!, seatCount: Int, departureDay: String,page: Int,pageSize: Int): [Flight]
         flight(id: Int!): Flight
-        bookings(email: String!,page: Int,pageSize: Int): [Booking!]!
-        booking(id: Int!): Booking!
+        bookings(email: String!,page: Int,pageSize: Int): [Booking]
+        booking(id: Int!): Booking
     }
 
     type Mutation {
         scheduleFlight(flightInfo: ScheduleFlightInput): ScheduleFlightResponse!
         bookFlight(postInput: BookingInfo): bookingResponse!
     }
-
 `;
 
 
 const schema = {
     typeDefs,
-    resolvers: resolvers
+    resolvers
 }
 
 module.exports = {

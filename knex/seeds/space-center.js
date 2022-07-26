@@ -3,7 +3,7 @@
  * @returns { Promise<void> } 
  */
 const spaceCenterData = require('../../data/space-centers');
-const { getPlanetsByCode } = require('../queries/queries');
+const { getPlanets } = require('../queries/queries');
 exports.seed = async (knex) => {
 
   // Deletes ALL existing entries
@@ -13,7 +13,7 @@ exports.seed = async (knex) => {
   let insert = [];
   for (const dat of spaceCenterData) {
 
-    const planet = await getPlanetsByCode({ code: dat.planet_code });
+    const planet = await getPlanets({ code: dat.planet_code });
     // console.log(planet)
     insert.push({
       name: dat.name,

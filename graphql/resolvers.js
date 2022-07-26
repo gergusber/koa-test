@@ -1,12 +1,12 @@
 
-const { 
+const {
     getPlanets,
     getSpaceCenter,
     getSpaceCenters,
     getFlights,
     getFlight,
     getBookings,
-    getBooking 
+    getBooking
 } = require('../knex/queries/queries');
 const scheduleFlight = async (flightInfo) => {
 
@@ -49,10 +49,14 @@ const getBookingResolver = async (filters) => {
     const data = await getBooking(filters)
     return data;
 }
-
+const resp = async (id) => {
+    console.log('acaa')
+    return { text: "Hello World", value: id }
+}
 const resolvers = () => {
     return {
         Query: {
+            hello: (id) => resp(id),
             planets: (_, filters) => getPlanetsResolver(filters),
             spaceCenters: (filters) => getSpaceCentersResolver(filters),
             spaceCenter: (_, filters) => getSpaceCenterResolver(filters),

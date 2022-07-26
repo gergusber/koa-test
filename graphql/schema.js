@@ -72,7 +72,13 @@ const typeDefs = gql`
         seatCount: Int!
     }
 
+    type TestData {
+        text: String!
+        value: Int!
+    }
+
     type Query {
+        hello(id: Int): TestData
         planets(limit: Int): [Planet]
         spaceCenters(page: Int,pageSize: Int): [SpaceCenter]
         spaceCenter(id: Int, uid: Int): SpaceCenter
@@ -85,6 +91,10 @@ const typeDefs = gql`
     type Mutation {
         scheduleFlight(flightInfo: ScheduleFlightInput): ScheduleFlightResponse!
         bookFlight(postInput: BookingInfo): bookingResponse!
+    }
+    schema {
+      query: Query  
+      mutation: Mutation
     }
 `;
 

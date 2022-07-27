@@ -57,13 +57,13 @@ const resolvers = () => {
     return {
         Query: {
             hello: (id) => resp(id),
-            planets: (_, filters) => getPlanetsResolver(filters),
+            planets: (filters) => getPlanetsResolver(filters),
             spaceCenters: (filters) => getSpaceCentersResolver(filters),
-            spaceCenter: (_, filters) => getSpaceCenterResolver(filters),
-            flights: (_, filters) => getFlightsResolver(filters),
-            flight: (_, filters) => getFlightResolver(filters),
-            bookings: (_, filters) => getBookingsResolver(filters),
-            booking: (_, filters) => getBookingResolver(filters),
+            spaceCenter: ( filters) => getSpaceCenterResolver(filters),
+            flights: (filters) => getFlightsResolver(filters),
+            flight: (filters) => getFlightResolver(filters),
+            bookings: (filters) => getBookingsResolver(filters),
+            booking: (filters) => getBookingResolver(filters),
         },
         Mutation: {
             scheduleFlight: (flightInfo) => scheduleFlight(flightInfo),
